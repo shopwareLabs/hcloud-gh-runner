@@ -1,0 +1,7 @@
+roles:
+  - name: monolithprojects.github_actions_runner
+  - name: monolithprojects.user_management
+  - name: geerlingguy.docker
+  - name: hifis.unattended_upgrades
+collections:
+  - name: hetzner.hcloud

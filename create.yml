@@ -1,0 +1,18 @@
+- hosts: localhost
+  tasks:
+    - name: Create Runner
+      hetzner.hcloud.hcloud_server:
+        api_token: "{{ lookup ('env', 'HCLOUD_TOKEN')}}"
+        name: "gh-arm64-runner-small-{{ item }}"
+        server_type: cax11
+        location: hel1
+        image: debian-12
+        labels:
+          gh-runner="{{ item }}"
+        ssh_keys:
+          - "Soner Sayakci"
+        state: present
+      loop:
+        - 1
+        - 2
+

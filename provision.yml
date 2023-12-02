@@ -1,0 +1,17 @@
+- hosts: all
+  vars:
+    ansible_user: root
+    user_management:
+      - name: runner
+        groups:
+          - docker
+    runner_user: runner
+    runner_org: yes
+    runner_labels:
+      - hcloud-arm64-small
+    github_account: shopware
+  roles:
+      - hifis.unattended_upgrades
+      - geerlingguy.docker
+      - monolithprojects.user_management
+      - monolithprojects.github_actions_runner

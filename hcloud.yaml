@@ -1,0 +1,9 @@
+plugin: hcloud
+locations:
+  - hel1
+types:
+  - cax11
+status:
+  - running
+
+label_selector: gh-runner
